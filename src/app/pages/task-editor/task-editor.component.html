@@ -1,0 +1,47 @@
+<mat-card>
+  <mat-card-title>
+    Tasks
+  </mat-card-title>
+  <mat-card-content>
+    <form>
+      <mat-form-field>
+        <input matInput placeholder="Id da task">
+        <button mat-button matSuffix mat-icon-button aria-label="Clear" (click)="showLoading()">
+          <mat-icon>search</mat-icon>
+        </button>
+      </mat-form-field>
+      <br/>
+      <mat-form-field>
+        <input matInput placeholder="Titulo">
+      </mat-form-field>
+      <br/>
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker" placeholder="Data de criação">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <br/>
+      <mat-checkbox>Finalizado</mat-checkbox>
+      <br/>
+      <br/>
+      <mat-form-field>
+        <mat-label>Prioridade</mat-label>
+        <mat-select>
+          <mat-option value="Alta">
+            Alta
+          </mat-option>
+          <mat-option value="Media">
+            Média
+          </mat-option>
+          <mat-option value="Baixa">
+            Baixa
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="showLoading()">Cadastrar/Atualizar</button>
+  </mat-card-actions>
+</mat-card>
+<ngx-loading [show]="loading"></ngx-loading>
